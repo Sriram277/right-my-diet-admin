@@ -1,0 +1,86 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> Search
+            </div>
+            <div class="card-block">
+                <div class="row">
+                    <div class="form-group col-md-2">
+                        <select class="form-control">
+                            <option value="all">All Categories</option>
+                            <option *ngFor="let category of Categories">{{category.name}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-7">
+                        <input type="text" class="form-control" [(ngModel)]="searchText" id="searchText" placeholder="Search">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <button (click)="searchTips(searchText)" type="button" class="btn btn-default">Search</button>
+                        <button (click)="clearSearch()" type="button" class="btn btn-default">Clear</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> List of All Tips
+            </div>
+            <div class="card-block">
+                <table class="table table-bordered table-striped table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>Vendor Name</th>
+                            <th>Post Image</th>
+                            <th>Title</th>
+                            <th>Gender</th>
+                            <th>Category</th>
+                            <th>Likes</th>
+                            <th>Favs</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr *ngFor="let tip of tips  | paginate: { itemsPerPage: itemsPPage, currentPage: curPage };let i = index" [attr.data-index]="i">
+                            <td>{{pagination(i,curPage)}}</td>
+                            <td>{{abc.firstName}} {{abc.lastName}}</td>
+                            <td><img width="50" [src]="tip.images"></td>
+                            <td><span class="tipTitle">{{tip.title}}</span></td>
+                            <td>{{tip.genderSpecific}}</td>
+                            <td>{{tip.category}}</td>
+                            <td>{{tip.likes.length}}</td>
+                            <td>{{tip.favourites.length}}</td>
+                            <td>
+                                <!-- <button class="btn btn-success btn-sm" type="button" [routerLink]="['/TipsEdit',tip.id]">Edit</button> -->
+                                <button class="btn btn-danger btn-sm" type="button" (click)="removeTip(tip)">Delete</button>
+                                <template [ngIf]="tip.status === 'UNPUBLISH' && hideRole('VENDOR')">
+                                    <button class="btn btn-primary btn-sm" type="button" (click)="makePublish(tip)">make Publish</button>
+                                </template>
+                                <template [ngIf]="tip.status === 'ACTIVE'">
+                                     <button class="btn btn-info btn-sm" type="button">Active</button>
+                                </template>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pagination-controls (pageChange)="changePage($event)" autoHide="true" previousLabel="" nextLabel=""></pagination-controls>
+                <!--<nav>
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="javascript:void()">Prev</a></li>
+                        <li class="page-item active"><a class="page-link" href="javascript:void()">1</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void()">2</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void()">3</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void()">4</a></li>
+                        <li class="page-item"><a class="page-link" href="javascript:void()">Next</a></li>
+                    </ul>
+                </nav>-->
+            </div>
+        </div>
+    </div>
+    <!--/.col-->
+</div>

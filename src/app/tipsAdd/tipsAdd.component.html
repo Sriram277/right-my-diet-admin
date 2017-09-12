@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>New Tip</strong>
+            </div>
+            <div class="card-block loadingOuter">
+                <div class="loadingBar" *ngIf="showLoading">
+                </div>
+                <form class="form-horizontal" #formCtrl="ngForm" name="tipForm" novalidate>
+                    <div class="form-group row">
+                        <label class="col-md-2 form-control-label">Tip Title*</label>
+                        <div class="col-md-10">
+                            <input type="text" name="title" class="form-control" [(ngModel)]="tip.title" placeholder="Text" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 form-control-label" for="textarea-input">Description*</label>
+                        <div class="col-md-10">
+                            <!--<textarea id="textarea-input" [(ngModel)]="tip.description"  name="textarea-input" rows="9" class="form-control" placeholder="Content.."></textarea>-->
+                            <!--<div [froalaEditor] [(froalaModel)]="tip.description">Hello, Froala!</div>-->
+                            <ckeditor [(ngModel)]="tip.description" [ngModelOptions]="{standalone: true}" name="description" [config]="config" debounce="500" required>
+                                <p>Hello <strong>world</strong></p>
+                            </ckeditor>
+                            <!--<div [innerHTML]="content"></div>-->
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2 form-control-label">Post Type</label>
+                        <div class="col-md-10">
+                        <label class="radio-inline" for="inline-radio1">
+                            <input type="radio" id="inline-radio1" name="inline-radios"  checked="true" [(ngModel)]="tip.postType" value="video"> Video Post
+                        </label>
+                        <label class="radio-inline" for="inline-radio2">
+                            <input type="radio" id="inline-radio2" name="inline-radios" [(ngModel)]="tip.postType" value="image"> Image Post
+                        </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group row" *ngIf="tip.postType == 'image'">
+                        <label class="col-md-2 form-control-label" for="file-input">Feature Image</label>
+                        <div class="col-md-10">
+                            <input type="file" id="file-input" name="file-input" (change)="fileChange($event)" placeholder="Upload file" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row" *ngIf="tip.postType == 'video'">
+                        <label class="col-md-2 form-control-label" for="file-input">Feature Video</label>
+                        <div class="col-md-10">
+                            <input type="text" id="text-input" name="video-input" [(ngModel)]="tip.videoLink" class="form-control" placeholder="Text" required>
+                            <span class="help-block">Add a You Tube Video URL here</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 form-control-label">Gender Specific</label>
+                        <div class="col-md-10">
+                            <div class="checkbox">
+                                <label for="checkbox1">
+                  <input type="checkbox" id="checkbox1" name="checkbox1" (change)="setGender('male', $event)" required> Men Only
+                </label>
+                            </div>
+                            <div class="checkbox">
+                                <label for="checkbox2">
+                  <input type="checkbox" id="checkbox2" name="checkbox2" (change)="setGender('female', $event)" required> Women Only
+                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2 form-control-label" for="select">Tip Category*</label>
+                        <div class="col-md-10">
+                            <select id="select" name="category" [(ngModel)]="tip.category" class="form-control" size="1" required>
+                <option value="0">Please select</option>
+                <option *ngFor="let cat of categories" value="{{cat.id}}">{{cat.name}}</option>
+              </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2 form-control-label" for="email-input">Tags</label>
+                        <div class="col-md-10">
+                            <input type="text" id="email-input" [(ngModel)]="tip.tagsList" name="email-input" class="form-control" placeholder="Enter Tags">
+                            <span class="help-block">Please enter Tags seperated by Coma's</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-sm btn-primary" (click)="saveTip()" > Submit</button>
+                <button type="reset" class="btn btn-sm btn-danger">Reset</button>
+            </div>
+            <!--{{tip | json}}-->
+        </div>
+    </div>
+    <!--/.col-->
+</div>

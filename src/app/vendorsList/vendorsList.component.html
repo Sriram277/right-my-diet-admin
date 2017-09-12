@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-lg-12">
+
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-align-justify"></i> Vendors List
+            </div>
+            <div class="card-block">
+                <table class="table table-bordered table-striped table-condensed">
+                    <thead>
+                        <tr>
+                            <th>S.No</th>
+                            <th>Name</th>
+                            <th>Mobile Number</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let vendor of vendors | paginate: { itemsPerPage: itemsPPage, currentPage: curPage };let i = index">
+                            <td>{{pagination(i,curPage)}}</td>
+                            <td><span class="categoryTitle">{{vendor.firstName}}</span></td>
+                            <td><span class="categoryTitle">{{vendor.mobileNumber}}</span></td>
+                            <td><span class="categoryTitle">{{vendor.email}}</span></td>
+                            <td>
+                                <!-- <button class="btn btn-danger btn-sm" type="button">Delete</button> -->
+                                <button *ngIf="vendor.status" class="btn btn-primary btn-sm {{vendor.status}}" type="button" (click)="vendorBlock(vendor)">{{vendor.status}}</button>
+                                <!-- <template [ngIf]="vendor.status === 'ACTIVE'">
+                    <button  class="btn btn-info btn-sm" type="button">{{vendor.status}}</button>
+                  </template> -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <pagination-controls (pageChange)="changePage($event)" autoHide="true" previousLabel="" nextLabel=""></pagination-controls>
+
+            </div>
+        </div>
+    </div>
+    <!--/.col-->
+</div>

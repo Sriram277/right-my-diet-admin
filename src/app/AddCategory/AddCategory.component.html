@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>New Category</strong>
+            </div>
+            <div class="card-block loadingOuter">
+                <div class="loadingBar" *ngIf="showLoading">
+
+                </div>
+                <form class="form-horizontal" (ngSubmit)="submitButton()" #f="ngForm" novalidate>
+                    <div class="form-group row">
+                        <label class="col-md-2 form-control-label">Category Title</label>
+                        <div class="col-md-10">
+                            <input type="text" name="text-input" class="form-control" [(ngModel)]="tip.name" placeholder="Text" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-md-2 form-control-label">Gender Specific?</label>
+                        <div class="col-md-1">
+                            <input type="checkbox" name="gender" class="form-control pull-right" [(ngModel)]="tip.genderSpecific" placeholder="Text">
+                        </div>
+                        <div class="col-md-9">
+
+                        </div>
+                    </div>
+
+                    <!--<div class="form-group row">
+            <label class="col-md-2 form-control-label" for="textarea-input">Description</label>
+            <div class="col-md-10">
+              <textarea id="textarea-input" [(ngModel)]="tip.description"  name="textarea-input" rows="9" class="form-control" placeholder="Content.."></textarea>
+              <div [froalaEditor]  [(froalaModel)]="tip.description">Hello, Froala!</div>
+            </div>
+
+          </div>-->
+                    <div class="form-group row">
+                        <label class="col-md-2 form-control-label" for="file-input">Feature Image</label>
+                        <div class="col-md-2"><img width="100" src="{{tip.imageURL}}" /></div>
+                        <div class="col-md-8">
+                            <input type="file" id="file-input" name="file-input" (change)="fileChange($event)" placeholder="Upload file" required>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-sm btn-primary" (click)="saveTip()" [disabled]="!f.valid"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+            </div>
+            <!--{{tip | json}}-->
+        </div>
+    </div>
+    <!--/.col-->
+</div>

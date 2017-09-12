@@ -1,0 +1,170 @@
+// Here you can add other styles
+.loadingOuter {
+    position: relative;
+    .loadingBar {
+        position: absolute;
+        background-color: rgba(204, 204, 204, 0.46);
+        width: 100%;
+        height: calc(100% - -52px);
+        z-index: 999;
+        right: 0px;
+        top: 0px;
+        background-image: url('../assets/img/avatars/spin.gif');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.ngx-pagination {
+    padding-left: 0px;
+    .current {
+        background: #a0aec4!important;
+    }
+}
+
+.btn-info {
+    background-color: #4f5467;
+    border-color: #4f5467;
+}
+
+.form-control:focus {
+    border-color: #4f5467!important;
+}
+
+.logoHead {
+    padding: 7px 25px;
+}
+
+ng2-datepicker {
+    width: 100%;
+    .datepicker-container {
+        width: 100%;
+        border: 1px solid #ccc;
+    }
+    .datepicker-input-container {
+        width: 100%;
+    }
+    .datepicker-input {
+        width: calc(100% - 25px) !important;
+        height: 32px !important;
+        -moz-border-bottom-colors: #ced4da !important;
+        -moz-border-left-colors: #ced4da !important;
+        -moz-border-right-colors: #ced4da !important;
+        -moz-border-top-colors: #ced4da !important;
+        border-color: -moz-use-text-color -moz-use-text-color #ced4da;
+    }
+}
+
+.datepicker-container[_ngcontent-yug-35] .datepicker-input-container[_ngcontent-yug-35] .datepicker-input[_ngcontent-yug-35] {
+    border-style: 1px 1px solid !important;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color -moz-use-text-color #ced4da;
+}
+
+.datepicker-input-icon {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    >i {
+        display: none;
+    }
+}
+
+select {
+    outline: none;
+}
+
+modal-footer {
+    display: none;
+}
+
+modal-title {
+    display: none;
+}
+
+.rounded.mx-auto {
+    margin-top: -55px !important;
+    background-color: white !important;
+    -webkit-box-shadow: 2px 2px 56px -13px rgba(43, 39, 43, 0.61);
+    -moz-box-shadow: 2px 2px 56px -13px rgba(43, 39, 43, 0.61);
+    box-shadow: 2px 2px 56px -13px rgba(43, 39, 43, 0.61);
+}
+
+.passwordMismatch {
+    position: relative;
+}
+
+.passwordMismatch .missMatch {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+}
+
+.BLOCKED {
+    background-color: #f00;
+    border-color: #f00;
+}
+
+.BLOCKED:hover {
+    background-color: #f86c6b;
+    border-color: #f86c6b;
+}
+
+.navbar-nav {
+    padding: 0 20px;
+}
+
+.profileImgBlock {
+    position: relative;
+}
+
+.profilePic {
+    width: 100%;
+    position: relative;
+}
+
+.profileEdit {
+    position: absolute;
+    //background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    .editBox {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        &:hover .icon {
+            opacity: 1;
+            bottom: 0px;
+        }
+        .editIcon {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 9px;
+            opacity: 0;
+        }
+        .icon {
+            position: absolute;
+            bottom: 0px;
+            padding: 8px 0;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5); // margin-left: -10px;
+            opacity: 0;
+            bottom: -30px;
+            -webkit-transition: all 0.3s;
+            /* Safari */
+            transition: all 0.3s;
+        }
+    }
+}
