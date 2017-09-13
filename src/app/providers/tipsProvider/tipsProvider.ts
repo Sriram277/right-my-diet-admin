@@ -20,7 +20,7 @@ export class TipsService {
 
   load(userId) {
     return new Promise(resolve => {
-      this.http.get('https://right-my-diet.herokuapp.com/articles/'+ userId +'/list/allUser')
+      this.http.get('https://right-my-diet.herokuapp.com/articles/'+ userId +'/list/all')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -182,7 +182,7 @@ export class TipsService {
 
     allTips(userId) {
     return new Promise(resolve => { 
-      this.http.get('https://right-my-diet.herokuapp.com/articles/'+ userId +'/list/allUser')
+      this.http.get('https://right-my-diet.herokuapp.com/articles/'+ userId +'/list/all')
         .map(res => res.json())
         .subscribe(data => {
           let b =[];
