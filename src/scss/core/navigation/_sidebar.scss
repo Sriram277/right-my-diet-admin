@@ -1,8 +1,9 @@
 .sidebar {
   padding: $sidebar-padding;
   color: $sidebar-color;
-  background: #4f5467;
+  //background: #4f5467;
   // background: green;
+  background-color: rgba(0, 0, 0, 0.71);
   @include borders($sidebar-borders);
 
   .sidebar-close {
@@ -110,7 +111,8 @@
         &:hover {
           color: $sidebar-nav-link-hover-color !important;
           // background: $sidebar-nav-link-hover-bg !important;
-          background:#7388a8!important;
+          // background:#7388a8!important;
+          background-color: rgba(0, 0, 0, 0.71);
           @include borders($sidebar-nav-link-hover-borders);
 
           i {
@@ -121,7 +123,8 @@
         &.active {
           color: $sidebar-nav-link-active-color;
           // background: $sidebar-nav-link-active-bg;
-           background:#7388a8 !important;
+           //background:#7388a8 !important;
+           background-color: rgba(0, 0, 0, 0.71);
           @include borders($sidebar-nav-link-active-borders);
 
           i {

@@ -125,14 +125,14 @@ export class tipsAddComponent {
    this.modal.alert()
         .size('lg')
         .showClose(true)
-        .title('Added Tip')
-        .body(`<p>Your Tip is Added successfully.</p>`)
+        .title('Added Article')
+        .body(`<p>Your Article is Added successfully.</p>`)
         .open();
   }
   populateError(message){
     this.modal.alert()
     .size('sm')
-    .title('Error in Adding Tip')
+    .title('Error in Adding Article')
     .body('<p>' + message + '</p>')
     .open();
    }

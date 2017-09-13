@@ -1,6 +1,6 @@
 <header class="app-header navbar">
     <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">&#9776;</button>
-    <a class="logoHead" [routerLink]="[ '/Tips/1/ ']"> <img src="assets/img/logo.png"></a>
+    <a class="logoHead" [routerLink]="[ '/Tips/1/ ']"> <img src="assets/img/logo1.png"></a>
 
     <ul class="nav navbar-nav hidden-md-down">
         <li class="nav-item">
@@ -68,23 +68,23 @@
                     </ul>
                 </li>  -->
                 <li class="nav-item nav-dropdown " routerLinkActive="open ">
-                    <a class="nav-link nav-dropdown-toggle " href="javascript:void() "><i class="icon-layers "></i> Tips</a>
+                    <a class="nav-link nav-dropdown-toggle " href="javascript:void() "><i class="icon-layers "></i> Articles</a>
                     <ul class="nav-dropdown-items ">
                         <li class="nav-item ">
-                            <a class="nav-link " routerLinkActive="active " [routerLink]="[ '/Tips/1/ '] "><i class="icon-list "></i> My Tips</a>
+                            <a class="nav-link " routerLinkActive="active " [routerLink]="[ '/Tips/1/ '] "><i class="icon-list "></i> My Articles</a>
                         </li>
 
                         <li *ngIf="hideRole( 'VENDOR') " class="nav-item ">
-                            <a class="nav-link " routerLinkActive="active " [routerLink]="[ '/AllTips/1/ '] "><i class="icon-list "></i>Vendors Tips List</a>
+                            <a class="nav-link " routerLinkActive="active " [routerLink]="[ '/AllTips/1/ '] "><i class="icon-list "></i>Vendors Articles List</a>
 
                         </li>
 
                         <li class="nav-item ">
-                            <a class="nav-link " routerLinkActive="active " [routerLink]="[ '/TipsAdd'] "><i class="icon-plus "></i>Add Tip</a>
+                            <a class="nav-link " routerLinkActive="active " [routerLink]="[ '/TipsAdd'] "><i class="icon-plus "></i>Add Article</a>
                         </li>
 
                         <li class="nav-item ">
-                            <a class="nav-link " routerLinkActive="active " [routerLink]="[ '/TipsDeleted'] "><i class="icon-trash "></i>Deleted Tips</a>
+                            <a class="nav-link " routerLinkActive="active " [routerLink]="[ '/TipsDeleted'] "><i class="icon-trash "></i>Deleted Articles</a>
                         </li>
                     </ul>
                 </li>
@@ -468,6 +468,6 @@
 </div>
 
 <footer class="app-footer ">
-    <a href="javascript:void() ">MyTips Admin</a> &copy; 2017 gleedtech.com
-    <span class="float-right ">Powered by <a href="javascript:void() ">MyTips Admin</a></span>
+    <a href="javascript:void() ">MyArticles Admin</a> &copy; 2017 gleedtech.com
+    <span class="float-right ">Powered by <a href="javascript:void() ">My Articles Admin</a></span>
 </footer>
