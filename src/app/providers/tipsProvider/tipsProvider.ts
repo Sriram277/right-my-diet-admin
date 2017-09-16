@@ -290,6 +290,18 @@ export class TipsService {
     });
 
   }
+
+  public getComments() {
+    return new Promise(resolve => {
+      this.http.get('https://right-my-diet.herokuapp.com/comments/display/all')
+        .map(res => res.json())
+        .subscribe(data => {
+          this.data = data;
+          resolve(this.data);
+        });
+    });
+
+  }
   
 }
 

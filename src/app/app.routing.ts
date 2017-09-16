@@ -84,6 +84,10 @@ export const routes: Routes = [
       {
         path: 'charts',
         loadChildren: './chartjs/chartjs.module#ChartJSModule'
+      },
+      {
+        path: 'comments',
+        loadChildren: './commentsList/commentsList.module#commentsListModule'
       }
     ]
   },

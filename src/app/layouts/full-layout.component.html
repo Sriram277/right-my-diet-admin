@@ -103,6 +103,22 @@
 
                     </ul>
                 </li>
+                <!--Comments section started -->
+                <li *ngIf="hideRole( 'VENDOR') " class="nav-item nav-dropdown " routerLinkActive="open ">
+                    <a class="nav-link nav-dropdown-toggle " href="javascript:void() "><i class="icon-layers "></i> Comments</a>
+                    <ul class="nav-dropdown-items ">
+
+                        <li class="nav-item ">
+                            <a class="nav-link " routerLinkActive="active " [routerLink]="[ '/comments'] "><i class="icon-list "></i> List Comments</a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link " routerLinkActive="active " [routerLink]="[ '/AddCategory'] "><i class="icon-plus "></i>  Add Comments </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <!--Comments section ended -->
                 <li *ngIf="hideRole( 'VENDOR') " class="nav-item nav-dropdown " routerLinkActive="open " style="display:none;">
                     <a class="nav-link nav-dropdown-toggle " href="javascript:void() "><i class="icon-layers "></i>Vendor Manage</a>
                     <ul class="nav-dropdown-items ">
