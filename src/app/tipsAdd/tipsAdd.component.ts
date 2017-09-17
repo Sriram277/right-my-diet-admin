@@ -13,7 +13,7 @@ export class tipsAddComponent {
   private categories;
   ckeditorContent;
  showLoading = false;
-  private tip = {title:'', description:'',images:[], videos:[],category:'',tagsList:'',tags:[], postType:'',genderSpecific:[],videoLink:''};
+  private tip = {title:'', description:'',images:[],category:'',tagsList:'',tags:[], postType:''};
   private hello;
   public showMe = false;
   public config = {toolbarGroups:[
@@ -55,13 +55,13 @@ export class tipsAddComponent {
             });
   }
 
-  setGender(value, event){
-    if(event.target.checked){
-      this.tip.genderSpecific.push(value);
-    }else{
-      this.tip.genderSpecific.splice(this.tip.genderSpecific.indexOf(value),1);
-     }
-  }
+  // setGender(value, event){
+  //   if(event.target.checked){
+  //     this.tip.genderSpecific.push(value);
+  //   }else{
+  //     this.tip.genderSpecific.splice(this.tip.genderSpecific.indexOf(value),1);
+  //    }
+  // }
 
   saveTip(){
     console.log(this.tip);
@@ -74,16 +74,6 @@ export class tipsAddComponent {
       this.tip.tags = this.tip.tagsList.split(',');
       delete this.tip.tagsList;
     }
-
-    if(this.tip.videoLink != ''){
-      let videoId = this.tip.videoLink.substr(this.tip.videoLink.indexOf("=") + 1);
-      let imageId = 'http://img.youtube.com/vi/'+videoId+'/0.jpg';
-      this.tip.videos = [];
-      this.tip.images = [];
-      this.tip.videos.push(videoId);
-      this.tip.images.push(imageId);
-      delete this.tip.videoLink;
-    }
      var a = localStorage.getItem('userData');
     a = JSON.parse(a);
     var b =[];
@@ -92,7 +82,7 @@ export class tipsAddComponent {
     this.AllTipsService.addTip(this.tip, b[0].id)
         .then(
             data => {
-              this.tip = {title:'', description:'', images:[],videos:[], category:'',tagsList:'',tags:[], postType:'',genderSpecific:[], videoLink:''};
+              this.tip = {title:'', description:'', images:[], category:'',tagsList:'',tags:[], postType:''};
               this.tipPublished();
             }, //Bind to view
             err => {
