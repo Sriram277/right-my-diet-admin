@@ -61,6 +61,7 @@
                                 <template [ngIf]="tip.status === 'ACTIVE'">
                                      <button class="btn btn-info btn-sm" type="button">Active</button>
                                 </template>
+                                <button class="btn btn-danger btn-sm" type="button" (click)="showPreview(tip)">Preview</button>
 
                             </td>
                         </tr>
