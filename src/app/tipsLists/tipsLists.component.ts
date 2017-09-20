@@ -9,6 +9,7 @@ import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms
   templateUrl: 'tipsLists.component.html'
 })
 export class tipsListComponent {
+  private logoImg;
   public tips;
   itemsPPage = 10;
   curPage = '1';
@@ -127,6 +128,22 @@ export class tipsListComponent {
       .body(`<p>Your Tip is published successfully</p>`)
       .open();
   }
+
+  /* Preview functionality */
+  showPreview(tip) {
+  //let source = tip.images[0];
+  this.logoImg =  "https://wishcop.s3.amazonaws.com/c81ac6d6-c20b-43ed-831d-7ef77ce86617.jpg";
+  //console.log(source);
+  let tipTitle = tip.title;
+      this.modal.alert()
+      .size('sm')
+      .showClose(true)
+      .title('Added Tip')
+      .body(`<img style="width:100%;height:100%;" src= "https://wishcop.s3.amazonaws.com/c81ac6d6-c20b-43ed-831d-7ef77ce86617.jpg" />` + `<div>dfgdfg</div>`)
+      .open();
+  }
+
+  /* Preview functionality */
   pagination(i,p){    
 
     return ((Number(this.curPage)- 1)*this.itemsPPage)+i+1;

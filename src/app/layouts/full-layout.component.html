@@ -1,6 +1,7 @@
 <header class="app-header navbar">
     <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">&#9776;</button>
-    <a class="logoHead" [routerLink]="[ '/Tips/1/ ']"> <img src="assets/img/logo1.png"></a>
+    <a class="logoHead logoHeader" [routerLink]="[ '/Tips/1/ ']" style="font-size: 20px;color: white;
+    margin-top: 5px;text-align: left;margin-left: -10px;text-decoration: none;"> Right my diet<!-- <img src="assets/img/logo1.png"> --></a>
 
     <ul class="nav navbar-nav hidden-md-down">
         <li class="nav-item">
@@ -20,7 +21,7 @@
             <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
              
                 <div class="dropdown-header text-center"><strong>Settings</strong></div>
-            <a class="dropdown-item" routerLinkActive="active" [routerLink]="[ '/Details']"><i class="fa fa-user"></i>Edit Profile</a>
+       <!--      <a class="dropdown-item" routerLinkActive="active" [routerLink]="[ '/Details']"><i class="fa fa-user"></i>Edit Profile</a> -->
                 <a class="dropdown-item" routerLinkActive="active " [routerLink]="[ '/changePassword'] "><i class="fa fa-shield "></i>Change Password</a>
                 <a (click)="logout()" class="dropdown-item" href=""><i class="fa fa-lock"></i> Logout</a>
                 <!-- <a class="dropdown-item" href="javascript:void()"><i class="fa fa-file"></i> Projects<span class="badge badge-primary">42</span></a> -->
@@ -112,9 +113,9 @@
                             <a class="nav-link " routerLinkActive="active " [routerLink]="[ '/comments'] "><i class="icon-list "></i> List Comments</a>
                         </li>
 
-                        <li class="nav-item ">
+<!--                         <li class="nav-item ">
                             <a class="nav-link " routerLinkActive="active " [routerLink]="[ '/AddCategory'] "><i class="icon-plus "></i>  Add Comments </a>
-                        </li>
+                        </li> -->
 
                     </ul>
                 </li>
