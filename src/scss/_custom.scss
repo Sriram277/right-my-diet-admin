@@ -168,3 +168,11 @@ modal-title {
         }
     }
 }
+
+.tags{
+    tag-input.tag-block{border: 1px solid #ccc; padding: 0 10px;}
+    .ng2-tag-input.ng2-tag-input--focused[_ngcontent-c5],.ng2-tag-input[_ngcontent-c5]{border-bottom: none;}
+    .ng2-tag-input[_ngcontent-c5]{padding: 0;}
+    tag[_ngcontent-c5]{margin: 5px 3px;padding: 0 7px;height: 25px;line-height: 28px;}
+    delete-icon[_nghost-c10]   svg[_ngcontent-c10]{height: 28px;}
+} 

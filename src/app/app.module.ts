@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ModalModule } from 'angular2-modal';
-import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
+import { ModalModule } from 'ngx-modialog';
+import { BootstrapModalModule } from 'ngx-modialog/plugins/bootstrap';
 // import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
 import { CKEditorModule,CKEditorComponent  } from 'ng2-ckeditor';
@@ -12,7 +12,7 @@ import { DatePickerModule } from 'ng2-datepicker';
 // import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { DropdownModule } from 'ng2-bootstrap/dropdown';
+import { BsDropdownModule } from 'ng2-bootstrap/dropdown';
 import { TabsModule } from 'ng2-bootstrap/tabs';
 import { NAV_DROPDOWN_DIRECTIVES } from './shared/nav-dropdown.directive';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -32,7 +32,8 @@ import { SimpleLayoutComponent } from './layouts/simple-layout.component';
 import { TipsService } from './providers/tipsProvider/tipsProvider';
 import { AuthService } from './providers/tipsProvider/authProvider';
 import { globalService } from './providers/tipsProvider/globalService';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TagInputModule } from 'ngx-chips';
 @NgModule({
   imports: [
     BrowserModule,
@@ -42,13 +43,15 @@ import { globalService } from './providers/tipsProvider/globalService';
     ModalModule.forRoot(),
     BootstrapModalModule,
     HttpModule,
-    DropdownModule.forRoot(),
+    BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
     CKEditorModule,
     // FroalaEditorModule.forRoot(), FroalaViewModule.forRoot(),
     NgxPaginationModule,
     DatePickerModule,
+    BrowserAnimationsModule,
+    TagInputModule
     
   ],
   declarations: [

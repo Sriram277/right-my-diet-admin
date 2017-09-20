@@ -57,10 +57,10 @@
                             <td>
                                 <!-- <button class="btn btn-success btn-sm" type="button" [routerLink]="['/TipsEdit',tip.id]">Edit</button> -->
                                 <button class="btn btn-danger btn-sm" type="button" (click)="removeTip(tip)">Delete</button>
-                                <template [ngIf]="tip.status === 'UNPUBLISH' && hideRole('VENDOR')">
+                                <template *ngIf="tip.status === 'UNPUBLISH' && hideRole('VENDOR')">
                                     <button class="btn btn-primary btn-sm" type="button" (click)="makePublish(tip)">make Publish</button>
                                 </template>
-                                <template [ngIf]="tip.status === 'ACTIVE'">
+                                <template *ngIf="tip.status === 'ACTIVE'">
                                      <button class="btn btn-info btn-sm" type="button">Active</button>
                                 </template>
 

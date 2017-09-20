@@ -1,6 +1,6 @@
 import {Component, ViewContainerRef} from '@angular/core';
-import {Overlay} from 'angular2-modal';
-import {Modal, BSModalContext} from 'angular2-modal/plugins/bootstrap';
+import {Overlay} from 'ngx-modialog';
+import {Modal} from 'ngx-modialog/plugins/bootstrap';
 import {Router, NavigationExtras} from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {AuthService} from '../providers/tipsProvider/authProvider';
@@ -13,8 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class emailVerificationComponent {
   private data: any;
   private verificationId ="";
-  constructor(public router: Router, private Auth: AuthService, overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal,private route: ActivatedRoute) {
-    overlay.defaultViewContainer = vcRef;
+  constructor(public router: Router, private Auth: AuthService, overlay: Overlay, public modal: Modal,private route: ActivatedRoute) {
       if(route.params){
     this.verificationId = route.params['_value']['verificationId'];
     this.Auth.emailVerification( this.verificationId);

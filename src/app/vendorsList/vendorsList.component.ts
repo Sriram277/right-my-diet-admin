@@ -1,8 +1,8 @@
 import { Component, ViewContainerRef } from '@angular/core';
 import {TipsService} from '../providers/tipsProvider/tipsProvider';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Overlay } from 'angular2-modal';
-import { Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
+import { Overlay } from 'ngx-modialog';
+import { Modal, BSModalContext } from 'ngx-modialog/plugins/bootstrap';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class vendorsListComponent {
   constructor(public tipsService: TipsService, public router: Router, overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal,private route: ActivatedRoute) {
     this.loadVendors();
     this.curPage = route.params['_value']['page'];
-    overlay.defaultViewContainer = vcRef;
+    
   }
   hideRole(role){
   var a = localStorage.getItem('userData');

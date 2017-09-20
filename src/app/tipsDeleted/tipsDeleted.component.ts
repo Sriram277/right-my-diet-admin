@@ -1,8 +1,8 @@
 import { Component, ViewContainerRef } from '@angular/core';
 import {TipsService} from '../providers/tipsProvider/tipsProvider';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Overlay } from 'angular2-modal';
-import { Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
+import { Overlay } from 'ngx-modialog';
+import { Modal } from 'ngx-modialog/plugins/bootstrap';
 
 @Component({
   templateUrl: 'tipsDeleted.component.html'
@@ -15,7 +15,7 @@ export class tipsDeletedComponent {
   curPage = '1';
   searchText = '';
   categoryIdVal:any = "all";
-  constructor(public tipsService: TipsService, public router: Router, overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal) {
+  constructor(public tipsService: TipsService, public router: Router, overlay: Overlay, public modal: Modal) {
     this.loadCategories();
     this.getDelTips();
     if(this.searchText != ''){

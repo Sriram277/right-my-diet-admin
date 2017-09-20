@@ -1,6 +1,6 @@
 import { Component ,ViewContainerRef } from '@angular/core';
-import {Overlay} from 'angular2-modal';
-import {Modal, BSModalContext} from 'angular2-modal/plugins/bootstrap';
+import {Overlay} from 'ngx-modialog';
+import {Modal} from 'ngx-modialog/plugins/bootstrap';
 import {Router, NavigationExtras} from '@angular/router';
 import { DatePickerOptions, DateModel } from 'ng2-datepicker';
 import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -39,7 +39,6 @@ this.userData = {
   mobileNumber:''
 };
 
-    overlay.defaultViewContainer = vcRef;
     this.options = new DatePickerOptions();
 
     //    this.theForm = fb.group({
