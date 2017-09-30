@@ -29,6 +29,20 @@
                         </div>
 
                     </div>
+
+                                        <!-- Grid description text area-->
+                     <div class="form-group row">
+                        <label class="col-md-2 form-control-label" for="gridDescription">Grid Description*</label>
+                        <div class="col-md-10">
+                            <!--<textarea id="textarea-input" [(ngModel)]="tip.description"  name="textarea-input" rows="9" class="form-control" placeholder="Content.."></textarea>-->
+                            <!--<div [froalaEditor] [(froalaModel)]="tip.description">Hello, Froala!</div>-->
+                            <textarea [(ngModel)]="tip.gridDescription" name="gridDescription" debounce="500" class="form-control" required>
+                            </textarea>
+                            <!--<div [innerHTML]="content"></div>-->
+                        </div>
+                    </div>
+                    <!-- Grid description text area-->
+                    
                     <div class="form-group row" [ngClass]="inlineradios.valid || (inlineradios.pristine && !f.submitted)? '':'has-danger'">
                         <label class="col-md-2 form-control-label">Post Type</label>
                         <div class="col-md-10">
@@ -57,7 +71,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
+<!--                     <div class="form-group row">
                         <label class="col-md-2 form-control-label">Gender Specific</label>
                         <div class="col-md-10">
                             <div class="checkbox">
@@ -72,7 +86,7 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group row" [ngClass]="select.valid || (select.pristine && !f.submitted)? '':'has-danger'">
                         <label class="col-md-2 form-control-label" for="select">Tip Category</label>
                         <div class="col-md-10">

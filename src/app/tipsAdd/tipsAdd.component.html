@@ -27,6 +27,18 @@
                             <!--<div [innerHTML]="content"></div>-->
                         </div>
                     </div>
+                    <!-- Grid description text area-->
+                     <div class="form-group row">
+                        <label class="col-md-2 form-control-label" for="gridDescription">Grid Description*</label>
+                        <div class="col-md-10">
+                            <!--<textarea id="textarea-input" [(ngModel)]="tip.description"  name="textarea-input" rows="9" class="form-control" placeholder="Content.."></textarea>-->
+                            <!--<div [froalaEditor] [(froalaModel)]="tip.description">Hello, Froala!</div>-->
+                            <textarea [(ngModel)]="tip.gridDescription" name="gridDescription" debounce="500" class="form-control" required>
+                            </textarea>
+                            <!--<div [innerHTML]="content"></div>-->
+                        </div>
+                    </div>
+                    <!-- Grid description text area-->
                     <!-- <div class="form-group row">
                         <label class="col-md-2 form-control-label">Post Type</label>
                         <div class="col-md-10">
@@ -71,12 +83,20 @@
               </select>
                         </div>
                     </div>
+                    <!-- Cover blog checkbox -->
+                                        <div class="form-group row">
+                        <label class="col-md-2 form-control-label" for="select">Make as Cover blog</label>
+                        <div class="col-md-10">
+                           <input type="checkbox" name="coverBlog" [checked]="tip.coverBlog" (change)="tip.coverBlog = !tip.coverBlog" >
+                        </div>
+                    </div>
+                    <!-- Cover blog checkbox -->
                     <div class="form-group row">
                         <label class="col-md-2 form-control-label" for="email-input">Tags</label>
                         <div class="col-md-10 tags">
                             <!-- <input type="text" id="email-input" [(ngModel)]="tip.tagsList" name="email-input" class="form-control" placeholder="Enter Tags"> -->
-                            <tag-input [ngModel]="tip.tagsList" name="tags" class="tag-block" [addOnBlur]="true" [clearOnBlur]="true">
-                                <tag-input-dropdown [autocompleteItems]="autocompleteItems">
+                            <tag-input [(ngModel)]="tip.tagsList" name="tags" class="tag-block" [addOnBlur]="true" [clearOnBlur]="true">
+                                <tag-input-dropdown [autocompleteItems]="requestAutocompleteItems">
                                 </tag-input-dropdown>
                             </tag-input>
                             <span class="help-block">Please enter Tags seperated by clicking Enter</span>

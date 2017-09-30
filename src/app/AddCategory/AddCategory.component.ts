@@ -38,7 +38,7 @@ export class AddCategoryComponent {
 
 
   saveTip(){
-    if(this.tip.imageURL!= ''){
+   // if(this.tip.imageURL!= ''){
     this.AllTipsService.AddCategory(this.tip)
         .then(
             data => {
@@ -49,9 +49,9 @@ export class AddCategoryComponent {
               // Log errors if any
               console.log(err);
             });
-    } else {
-      this.tipPublished('Please uplaod an image to Add Category');
-    }
+    //} else {
+    //  this.tipPublished('Please uplaod an image to Add Category');
+    //}
   }
   myfile:any;
   fileChange(fileInput: any) {

@@ -4,6 +4,8 @@ import { Modal } from 'ngx-modialog/plugins/bootstrap';
 import { TipsService } from '../providers/tipsProvider/tipsProvider';
 import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import {Http, RequestOptions, Headers} from '@angular/http';
+import {Observable} from 'rxjs';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/map';
 
@@ -15,7 +17,7 @@ export class tipsAddComponent {
   private categories;
   ckeditorContent;
  showLoading = false;
-  private tip = {title:'', description:'',images:[],category:'',tagsList:'',tags:[], postType:''};
+  private tip = {title:'', description:'',images:[],category:'',tagsList:[],tags:[], postType:'',coverBlog: 'false',gridDescription:''};
   private hello;
   public showMe = false;
   public config = {toolbarGroups:[
@@ -37,8 +39,9 @@ export class tipsAddComponent {
     removeDialogTabs:'image:advanced;link:advanced'
   };
 
-  constructor(private AllTipsService: TipsService,overlay: Overlay, public modal: Modal){
+  constructor(private AllTipsService: TipsService,overlay: Overlay, public modal: Modal, public http: Http){
     this.loadCategories();
+    this.getAutocompleteTags();
     this.ckeditorContent = '<p>My HTML</p>';
   }
   // Local properties
@@ -56,6 +59,13 @@ export class tipsAddComponent {
             });
   }
 
+  /* Get auto completed strings*/
+   getAutocompleteTags() {
+   
+   }
+
+  /* Get auto completed strings*/
+
   // setGender(value, event){
   //   if(event.target.checked){
   //     this.tip.genderSpecific.push(value);
@@ -66,24 +76,32 @@ export class tipsAddComponent {
 
   saveTip(){
     console.log(this.tip);
-    if(this.tip.title === "" || this.tip.description === "" || this.tip.category === ""){
+    if(this.tip.title === "" || this.tip.description === "" || this.tip.category === "" || this.tip.gridDescription ===""){
       this.populateError("Please Enter mandatory fields");
     }
     else {      
-    
+    alert(this.tip.coverBlog);
     if(this.tip.tagsList){
-      this.tip.tags = this.tip.tagsList.split(',');
-      delete this.tip.tagsList;
+      //this.tip.tags = this.tip.tagsList.split(',');
+      //delete this.tip.tagsList;
+      for(let i=0;i<this.tip.tagsList.length;i++) {
+        this.tip.tags[i] = this.tip.tagsList[i].value;
+      }
+      //return this.items;
+      //this.tip.tags = this.tip.tagsList
     }
      var a = localStorage.getItem('userData');
     a = JSON.parse(a);
     var b =[];
     b.push(a);
     // console.log(b[0].id);
+/*    if(this.tip.coverBlog==""){
+    this.tip.coverBlog = "false";
+    }*/
     this.AllTipsService.addTip(this.tip, b[0].id)
         .then(
             data => {
-              this.tip = {title:'', description:'', images:[], category:'',tagsList:'',tags:[], postType:''};
+              this.tip = {title:'', description:'', images:[], category:'',tagsList:[],tags:[], postType:'', coverBlog: '', gridDescription:''};
               this.tipPublished();
             }, //Bind to view
             err => {
@@ -127,4 +145,14 @@ export class tipsAddComponent {
     .body('<p>' + message + '</p>')
     .open();
    }
+
+/*   public requestAutocompleteItems = (text: string): Observable<Response> => {
+    const url = `https://right-my-diet.herokuapp.com/tags/search/{text}`;
+    return this.http
+        .get(url)
+        .map(data => data.json());
+};*/
+
+
+ public requestAutocompleteItems = [{value: 0, display: 'Fitness'}, {value: 1, display: 'Beauty'}, {value: 2, display: 'Health'}, {value: 3, display: 'Sample'}];
 }

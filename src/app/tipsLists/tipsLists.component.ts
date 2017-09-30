@@ -9,8 +9,8 @@ import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms
   templateUrl: 'tipsLists.component.html'
 })
 export class tipsListComponent {
-  private logoImg;
   public tips;
+  dangerousUrl: string;
   itemsPPage = 10;
   curPage = '1';
   searchText:any = ' ';
@@ -130,19 +130,21 @@ export class tipsListComponent {
   }
 
   /* Preview functionality */
-  showPreview(tip) {
-  //let source = tip.images[0];
-  this.logoImg =  "https://wishcop.s3.amazonaws.com/c81ac6d6-c20b-43ed-831d-7ef77ce86617.jpg";
-  //console.log(source);
-  let tipTitle = tip.title;
+   showPreview(tip) {
+  let source = tip.images[0];
+  console.log(tip);
+  let tipTitle = tip.title; 
+  let tipDesc = tip.description;
+  let tipCategory = tip.category;
+  console.log("image source:::"+source);
+  this.dangerousUrl = '<img style="width:100%;height:100%;margin-left:10px;" src= "'+source+'" />' + '<h4>'+tipCategory+'</h4>' + '<p>' + tipTitle + '</p>' ;
       this.modal.alert()
       .size('sm')
       .showClose(true)
       .title('Added Tip')
-      .body(`<img style="width:100%;height:100%;" src= "https://wishcop.s3.amazonaws.com/c81ac6d6-c20b-43ed-831d-7ef77ce86617.jpg" />` + `<div>dfgdfg</div>`)
+      .body(this.dangerousUrl)
       .open();
   }
-
   /* Preview functionality */
   pagination(i,p){    
 

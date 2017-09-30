@@ -18,7 +18,7 @@ export class tipsEditComponent {
   maleCheck = false;
   private tipId: any;
   private categories;
-  tip: any = {title:'', description:'', images:[],videos:[], category:'',tagsList:'',tags:[], postType:'',genderSpecific:[], videoLink:'',userId:''};
+  tip: any = {title:'', description:'', images:[],videos:[], category:'',tagsList:'',tags:[], postType:'',genderSpecific:[], videoLink:'',userId:'',gridDescription:''};
     public config = {toolbarGroups:[
         { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
         { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
@@ -59,6 +59,7 @@ export class tipsEditComponent {
         this.tip.description = b.description;
         this.tip.images = b.images;
         this.tip.videos = b.videos;
+        this.tip.gridDescription = b.gridDescription;
         this.tip.category = b.category;
         // this.tip.tagsList = b.tagsList;
         this.tip.tags = b.tags;
@@ -127,7 +128,7 @@ export class tipsEditComponent {
     this.AllTipsService.updateTip(this.tipId,this.tip)
         .then(
             data => {
-            //  this.tip = {title:'', description:'', images:[],videos:[], category:'',tagsList:'',tags:[], postType:'',genderSpecific:[], videoLink:''};
+            //  this.tip = {title:'', description:'', images:[],videos:[], category:'',tagsList:'',tags:[], postType:'',genderSpecific:[], videoLink:'', gridDescription:''};
               this.tipPublished();
             }, //Bind to view
             err => {
