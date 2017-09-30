@@ -28,11 +28,9 @@ export class commentsListComponent {
   //publish comment
 
   publishComment(comment) {
-  console.log(comment.id);
-  alert("hi");
+  
   this.tipsService.publishComment(comment.id).then(
      data => {        
-     alert("comment published successfully");
           this.tipPublished();
         }, //Bind to view
         err => {
@@ -54,10 +52,8 @@ export class commentsListComponent {
   // Delete Comment
 
     DelComment(comment) {
-    alert(comment);
     var confirmed = confirm("Are you sure to delete?");
     if(confirmed){
-    alert(comment.id);
       this.tipsService.deleteComment(comment.id)
         .then(
           data => {
