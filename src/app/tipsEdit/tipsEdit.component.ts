@@ -22,7 +22,7 @@ export class tipsEditComponent {
   maleCheck = false;
   private tipId: any;
   private categories;
-  tip: any = {title:'', description:'', images:[],videos:[], category:'',tagsList:[],tags:[], postType:'',genderSpecific:[], videoLink:'',userId:'',gridDescription:''};
+  tip: any = {title:'', description:'', images:[], category:'',tagsList:[],tags:[], postType:'',genderSpecific:[],userId:'',gridDescription:''};
     public config = {toolbarGroups:[
         { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
         { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
@@ -62,7 +62,6 @@ export class tipsEditComponent {
         this.tip.title = b.title;
         this.tip.description = b.description;
         this.tip.images = b.images;
-        this.tip.videos = b.videos;
         this.tip.gridDescription = b.gridDescription;
         this.tip.category = b.category;
         this.tip.tagsList = b.tagsList;
@@ -82,11 +81,7 @@ export class tipsEditComponent {
         }else{
         this.tip.genderSpecific = [];  
         }
-        if(b.videos.length != 0){
-          this.tip.videoLink = "https://www.youtube.com/watch?v=" + b.videos[0];
-        }else{
-          this.tip.videoLink = '';
-        }
+       
         this.tip.userId = b.userId;
         console.log(b);
         });
@@ -125,15 +120,6 @@ export class tipsEditComponent {
     }
     }
 
-    if(this.tip.videoLink != ''){
-      let videoId = this.tip.videoLink.substr(this.tip.videoLink.indexOf("=") + 1);
-      let imageId = 'http://img.youtube.com/vi/'+videoId+'/0.jpg';
-      this.tip.videos = [];
-      this.tip.images = [];
-      this.tip.videos.push(videoId);
-      this.tip.images.push(imageId);
-      delete this.tip.videoLink;
-    }
     this.AllTipsService.updateTip(this.tipId,this.tip)
         .then(
             data => {

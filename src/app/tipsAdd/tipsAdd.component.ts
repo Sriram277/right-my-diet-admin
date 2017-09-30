@@ -80,7 +80,6 @@ export class tipsAddComponent {
       this.populateError("Please Enter mandatory fields");
     }
     else {      
-    alert(this.tip.coverBlog);
     if(this.tip.tagsList){
       //this.tip.tags = this.tip.tagsList.split(',');
       //delete this.tip.tagsList;
