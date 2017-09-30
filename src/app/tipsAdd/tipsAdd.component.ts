@@ -17,7 +17,7 @@ export class tipsAddComponent {
   private categories;
   ckeditorContent;
  showLoading = false;
-  private tip = {title:'', description:'',images:[],category:'',tagsList:[],tags:[], postType:'',coverBlog: 'false',gridDescription:''};
+  private tip = {title:'', description:'',images:[],category:'',tagsList:[],tags:[], postType:'',coverBlog: false, gridDescription:''};
   private hello;
   public showMe = false;
   public config = {toolbarGroups:[
@@ -100,7 +100,7 @@ export class tipsAddComponent {
     this.AllTipsService.addTip(this.tip, b[0].id)
         .then(
             data => {
-              this.tip = {title:'', description:'', images:[], category:'',tagsList:[],tags:[], postType:'', coverBlog: '', gridDescription:''};
+              this.tip = {title:'', description:'', images:[], category:'',tagsList:[],tags:[], postType:'', coverBlog: false, gridDescription:''};
               this.tipPublished();
             }, //Bind to view
             err => {
