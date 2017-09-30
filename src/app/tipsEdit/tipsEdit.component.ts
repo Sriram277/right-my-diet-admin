@@ -5,6 +5,10 @@ import { TipsService } from '../providers/tipsProvider/tipsProvider';
 import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import {Http, RequestOptions, Headers} from '@angular/http';
+import {Observable} from 'rxjs';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/map';
 
 declare const CKEDITOR: any;
 @Component({
@@ -18,7 +22,7 @@ export class tipsEditComponent {
   maleCheck = false;
   private tipId: any;
   private categories;
-  tip: any = {title:'', description:'', images:[],videos:[], category:'',tagsList:'',tags:[], postType:'',genderSpecific:[], videoLink:'',userId:'',gridDescription:''};
+  tip: any = {title:'', description:'', images:[],videos:[], category:'',tagsList:[],tags:[], postType:'',genderSpecific:[], videoLink:'',userId:'',gridDescription:''};
     public config = {toolbarGroups:[
         { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
         { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
@@ -61,7 +65,7 @@ export class tipsEditComponent {
         this.tip.videos = b.videos;
         this.tip.gridDescription = b.gridDescription;
         this.tip.category = b.category;
-        // this.tip.tagsList = b.tagsList;
+        this.tip.tagsList = b.tagsList;
         this.tip.tags = b.tags;
         this.tip.postType = b.postType;
         this.tip.postType = b.postType;
@@ -112,8 +116,13 @@ export class tipsEditComponent {
   updateTip(val){
     if(val){
     if(this.tip.tagsList){
-      this.tip.tags = this.tip.tagsList.split(',');
-      delete this.tip.tagsList;
+      //this.tip.tags = this.tip.tagsList.split(',');
+      //delete this.tip.tagsList;
+     if(this.tip.tagsList){
+      for(let i=0;i<this.tip.tagsList.length;i++) {
+        this.tip.tags[i] = this.tip.tagsList[i].value;
+      }
+    }
     }
 
     if(this.tip.videoLink != ''){
@@ -128,7 +137,7 @@ export class tipsEditComponent {
     this.AllTipsService.updateTip(this.tipId,this.tip)
         .then(
             data => {
-            //  this.tip = {title:'', description:'', images:[],videos:[], category:'',tagsList:'',tags:[], postType:'',genderSpecific:[], videoLink:'', gridDescription:''};
+            //  this.tip = {title:'', description:'', images:[],videos:[], category:'',tagsList:[],tags:[], postType:'',genderSpecific:[], videoLink:'', gridDescription:''};
               this.tipPublished();
             }, //Bind to view
             err => {
