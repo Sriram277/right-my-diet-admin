@@ -63,6 +63,7 @@
     "protractor": "latest",
     "ts-node": "latest",
     "tslint": "latest",
-    "typescript": "latest"
+    "typescript": "^2.3.4",
+    "webpack": "^3.6.0"
   }
 }

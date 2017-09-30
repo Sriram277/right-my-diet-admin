@@ -25,6 +25,23 @@ export class commentsListComponent {
       });
   }
 
+  //publish comment
+
+  publishComment(comment) {
+  console.log(comment.id);
+  alert("hi");
+  this.tipsService.publishComment(comment.id).then(
+     data => {        
+     alert("comment published successfully");
+          this.tipPublished();
+        }, //Bind to view
+        err => {
+          // Log errors if any
+          console.log(err);
+        });
+  }
+
+  // publish comment End
   tipPublished(){
     this.modal.alert()
       .size('lg')
@@ -33,6 +50,39 @@ export class commentsListComponent {
       .body(`<p>Your Comment is published successfully</p>`)
       .open();
   }
+
+  // Delete Comment
+
+    DelComment(comment) {
+    alert(comment);
+    var confirmed = confirm("Are you sure to delete?");
+    if(confirmed){
+    alert(comment.id);
+      this.tipsService.deleteComment(comment.id)
+        .then(
+          data => {
+            this.Comments.splice(this.Comments.indexOf(comment),1);
+            this.delSuccess();
+          }, //Bind to view
+          err => {
+            // Log errors if any
+            console.log(err);
+            alert("fail");
+          });
+    }
+
+  }
+
+    delSuccess(){
+    this.modal.alert()
+      .size('lg')
+      .showClose(true)
+      .title('Delete Comment')
+      .body(`<p>Your Comment is Deleted successfully</p>`)
+      .open();
+  }
+
+  // Delete Comment
 
     DelCategory(category) {
       console.log(category);

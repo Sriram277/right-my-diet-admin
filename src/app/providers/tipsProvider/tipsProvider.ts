@@ -302,6 +302,39 @@ export class TipsService {
     });
 
   }
+
+  public publishComment(commentId) {
+    return new Promise(resolve => {
+      this.http.get('https://right-my-diet.herokuapp.com/articles/'+commentId+'/publish')
+        .map(res => res.json())
+        .subscribe(data => {
+          this.data = data;
+          resolve(this.data);
+        });
+    }); 
+  }
+
+  public deleteComment(commentId) {
+    return new Promise(resolve => {
+      this.http.delete('https://right-my-diet.herokuapp.com/articles/' + commentId + '/deleteComment')
+        .map(res => res.json())
+        .subscribe(data => {
+          this.data = data;
+          resolve(this.data);
+        });
+    });
+  }
+
+    public searchElements(str) {
+    return new Promise(resolve => {
+      this.http.get('https://right-my-diet.herokuapp.com/tags/search/' + str)
+        .map(res => res.json())
+        .subscribe(data => {
+          this.data = data;
+          resolve(this.data);
+        });
+    }); 
+  }
   
 }
 
