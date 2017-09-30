@@ -99,7 +99,11 @@
                     <div class="form-group row">
                         <label class="col-md-2 form-control-label" for="email-input">Tags</label>
                         <div class="col-md-10">
-                            <input type="text" id="email-input" [(ngModel)]="tip.tagsList" name="emailinput" class="form-control" placeholder="Enter Tags">
+                            <!-- <input type="text" id="email-input" [(ngModel)]="tip.tagsList" name="emailinput" class="form-control" placeholder="Enter Tags"> -->
+                            <tag-input [(ngModel)]="tip.tagsList" name="tags" class="tag-block" [addOnBlur]="true" [clearOnBlur]="true">
+                                <tag-input-dropdown [autocompleteItems]="requestAutocompleteItems">
+                                </tag-input-dropdown>
+                            </tag-input>
                             <span class="help-block">Please enter Tags seperated by Coma's</span>
                         </div>
                     </div>
