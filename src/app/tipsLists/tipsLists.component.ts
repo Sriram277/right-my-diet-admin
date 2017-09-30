@@ -137,7 +137,7 @@ export class tipsListComponent {
   let tipDesc = tip.description;
   let tipCategory = tip.category;
   console.log("image source:::"+source);
-  this.dangerousUrl = '<img width=268 height=150 src= "'+source+'" />' + '<h4>'+tipCategory+'</h4>' + '<p>' + tipTitle + '</p>' ;
+  this.dangerousUrl = '<img width=268 height=150 src= "'+source+'" />' + '<h4>'+tipCategory+'</h4>' + '<p>' + tipTitle + '</p>' + '<p>' + tipDesc + '</p>'  ;
       this.modal.alert()
       .size('sm')
       .showClose(true)
