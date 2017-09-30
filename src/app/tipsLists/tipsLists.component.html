@@ -58,9 +58,11 @@
                                 <span class="fa fa-pencil-square" style="font-size: 20px;margin-right: 3px;" [routerLink]="['/TipsEdit',tip.id]"></span>
                                 <span class="fa fa-trash-o" style="font-size: 20px;margin-right: 3px;" (click)="removeTip(tip)"></span>
                                 <span class="fa fa-eye" style="font-size: 20px;margin-right: 3px;" (click)="showPreview(tip)" ></span>
-                                <template *ngIf="tip.status === 'UNPUBLISH'">
-                                    <button class="btn btn-primary btn-sm" type="button" (click)="makePublish(tip)">Publish</button>
-                                </template>
+                                
+                                <span *ngIf="tip.status === 'UNPUBLISH'" class="fa fa-newspaper-o" style="font-size: 20px;margin-right: 3px;" (click)="makePublish(tip)" ></span>
+
+                                <!-- <button *ngIf="tip.status === 'UNPUBLISH'" class="btn btn-primary btn-sm" type="button" (click)="makePublish(tip)">Publish</button> -->
+                                
                                 <!-- <template *ngIf="tip.status === 'ACTIVE'">
                                      <button class="btn btn-info btn-sm" type="button">Active</button>
                                 </template> -->
