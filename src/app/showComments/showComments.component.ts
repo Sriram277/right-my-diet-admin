@@ -1,6 +1,6 @@
 import { Component, ViewContainerRef } from '@angular/core';
 import {TipsService} from '../providers/tipsProvider/tipsProvider';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Overlay } from 'ngx-modialog';
 import { Modal } from 'ngx-modialog/plugins/bootstrap';
 import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
@@ -137,12 +137,18 @@ export class ShowCommentsComponent {
 
   }
 
+  //back to articles
+
+backToArticles(event) {
+  this.router.navigate(['/Tips/1/ ']);
+  }
+
   pagination(i,p){ 
     return ((Number(this.curPage)- 1)*this.itemsPPage)+i+1;
   }
 
   changePage(event){
-    this.router.navigate(['/showComments/'+event+'/'+this.searchText]);
+    this.router.navigate(['/showComments/'+ event]);
     this.curPage = event;
   }
 

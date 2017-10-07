@@ -58,8 +58,8 @@
                             <th>Actions</th>
                         </tr>
                     </thead>
-                    <tbody *ngFor="let Comment of Comments | paginate: { itemsPerPage: itemsPPage, currentPage: curPage };let i = index" [attr.data-index]="i">
-                        <tr *ngIf="Comment.status === 'UNPUBLISH'">
+                    <tbody>
+                        <tr *ngFor="let Comment of Comments | paginate: { itemsPerPage: itemsPPage, currentPage: curPage };let i = index" [attr.data-index]="i">
                             <td style="width:10%;"><span class="categoryTitle">{{Comment.commented_by.name}}</span></td>
                             <td style="width:20%;"><span class="categoryTitle">{{Comment.commented_by.email}}</span></td>
                             <td style="width:50%;">{{Comment.commentText}}</td>
@@ -73,7 +73,10 @@
                         </tr>
                     </tbody>
                 </table>
-                <pagination-controls (pageChange)="changePage($event)" autoHide="true" previousLabel="" nextLabel=""></pagination-controls>
+                <div>
+                <pagination-controls (pageChange)="changePage($event)" autoHide="true" previousLabel="" nextLabel="" style="float:left"></pagination-controls>
+                <button style="float: right;margin-right: 21px;margin-top: 5px;" class="btn btn-success btn-sm" type="button" (click)="backToArticles()">Back</button>
+                </div>
             </div>
         </div>
     </div>
