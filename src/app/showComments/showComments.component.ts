@@ -55,7 +55,8 @@ export class ShowCommentsComponent {
   this.tipsService.publishComment(comment.id).then(
      data => {        
           this.tipPublished();
-          this.loadCommentsByArticle();
+          this.Comments.splice(this.Comments.indexOf(comment),1);
+          //this.loadCommentsByArticle();
         }, //Bind to view
         err => {
           // Log errors if any
@@ -148,7 +149,7 @@ backToArticles(event) {
   }
 
   changePage(event){
-    this.router.navigate(['/showComments/'+ event]);
+    this.router.navigate(['/showComments/'+ event + '/ ']);
     this.curPage = event;
   }
 
