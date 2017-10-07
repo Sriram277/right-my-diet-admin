@@ -16,10 +16,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let Comment of Comments">
+                        <tr *ngFor="let Comment of Comments | paginate: { itemsPerPage: itemsPPage, currentPage: curPage };let i = index" [attr.data-index]="i">
                             <td><span class="categoryTitle">{{Comment.commented_by.name}}</span></td>
                             <td><span class="categoryTitle">{{Comment.commented_by.name}}</span></td>
-                            <td>{{Comment.commentText}}</td>
+                            <td style="width:50%;">{{Comment.commentText}}</td>
                             <td>
                                 <button class="btn btn-success btn-sm" type="button" (click)="publishComment(Comment)">Publish</button>
                                 <button class="btn btn-danger btn-sm" type="button" (click)="DelComment(Comment)">Decline</button>
@@ -30,7 +30,7 @@
                         </tr>
                     </tbody>
                 </table>
-
+                <pagination-controls (pageChange)="changePage($event)" autoHide="true" previousLabel="" nextLabel=""></pagination-controls>
             </div>
         </div>
     </div>

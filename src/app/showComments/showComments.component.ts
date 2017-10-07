@@ -149,7 +149,7 @@ backToArticles(event) {
   }
 
   changePage(event){
-    this.router.navigate(['/showComments/'+ event + '/ ']);
+    //this.router.navigate(['/showComments/'+ event + '/ ']);
     this.curPage = event;
   }
 
