@@ -88,6 +88,10 @@ export const routes: Routes = [
       {
         path: 'comments',
         loadChildren: './commentsList/commentsList.module#commentsListModule'
+      },
+      {
+      path: 'showComments/:tipId',
+      loadChildren: './showComments/showComments.module#showCommentsModule'
       }
     ]
   },

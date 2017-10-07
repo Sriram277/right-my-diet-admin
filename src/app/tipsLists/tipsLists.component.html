@@ -34,12 +34,13 @@
                         <tr>
                             <th>Index</th>
                             <th>Post Image</th>
-                            <th>Title</th>
+                            <th>Article Name</th>
                             <!-- <th>Gender</th> -->
                             <th>Category</th>
                             <!-- <th>Likes</th> -->
                             <!-- <th>Favs</th> -->
                             <th>Actions</th>
+                            <th>Comments</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,6 +70,9 @@
                                 <!-- <button class="btn btn-danger btn-sm" type="button" (click)="showPreview(tip)">Preview</button> -->
                                 
 
+                            </td>
+                            <td>
+                                <button class="btn btn-success btn-sm" type="button" [routerLink]="['/showComments',tip.id]">View</button>
                             </td>
                         </tr>
                     </tbody>
