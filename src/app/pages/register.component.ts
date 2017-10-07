@@ -1,8 +1,8 @@
 import { Component ,ViewContainerRef } from '@angular/core';
 import {Overlay} from 'ngx-modialog';
-import {Modal} from 'ngx-modialog/plugins/bootstrap';
+import { Modal } from 'ngx-modialog/plugins/bootstrap';
 import {Router, NavigationExtras} from '@angular/router';
-import { DatePickerOptions, DateModel } from 'ng2-datepicker';
+// import { DatePickerOptions, DateModel } from 'ng2-datepicker';
 import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 // import { NGValidators } from 'ng-validators';
@@ -14,10 +14,10 @@ import {AuthService} from '../providers/tipsProvider/authProvider';
 export class RegisterComponent {
  private userData: any;
   private data: any;
-   date: DateModel;
+   // date: DateModel;
    theForm;
 
-  options: DatePickerOptions;
+  // options: DatePickerOptions;
     constructor(public router: Router, private Auth: AuthService, overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal, private fb: FormBuilder) {
 //     this.userData = {
 //   "firstName" : "",
@@ -39,7 +39,7 @@ this.userData = {
   mobileNumber:''
 };
 
-    this.options = new DatePickerOptions();
+    // this.options = new DatePickerOptions();
 
     //    this.theForm = fb.group({
     //   email: ['', [Validators.required, NGValidators.isEmail()]]
