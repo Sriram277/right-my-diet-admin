@@ -47,7 +47,10 @@
     "rxjs": "latest",
     "ts-helpers": "latest",
     "typescript": "2.3.4",
-    "zone.js": "latest"
+    "zone.js": "latest",
+     "@types/jasmine": "latest",
+     "@types/node": "latest"
+
   },
   "devDependencies": {
     "@angular/cli": "latest",
