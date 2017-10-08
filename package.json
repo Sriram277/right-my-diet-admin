@@ -46,7 +46,7 @@
     "ngx-pagination": "latest",
     "rxjs": "latest",
     "ts-helpers": "latest",
-    "typescript": "^2.3.4",
+    "typescript": "2.3.4",
     "zone.js": "latest"
   },
   "devDependencies": {
@@ -67,8 +67,9 @@
     "protractor": "latest",
     "ts-node": "latest",
     "tslint": "latest",
-    "typescript": "^2.3.4",
-    "webpack": "^3.6.0"
+    "typescript": "2.3.4",
+    "webpack": "^3.6.0",
+     "ngx-modialog": "^3.0.4"
   },
   "engines": {
   "node": "6.11.3",
