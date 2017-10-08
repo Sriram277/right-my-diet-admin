@@ -9,14 +9,16 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build",
+     "start": "node Server.js"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^4.4.4",
+    "@angular/cli": "latest",
     "@angular/common": "^4.4.4",
     "@angular/compiler": "^4.4.4",
     "@angular/core": "^4.4.4",
@@ -29,6 +31,7 @@
     "angular-froala-wysiwyg": "latest",
     "chart.js": "latest",
     "core-js": "latest",
+    "express": "^4.16.1",
     "moment": "latest",
     "ng-validators": "latest",
     "ng2-charts": "latest",
