@@ -47,8 +47,7 @@ export class AddCategoryComponent {
             }, //Bind to view
             err => {
               // Log errors if any
-              alert("errr");
-              console.log(err);
+                    console.log(err._body);
             });
     //} else {
     //  this.tipPublished('Please uplaod an image to Add Category');
