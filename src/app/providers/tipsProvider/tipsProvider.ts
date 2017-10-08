@@ -3,6 +3,8 @@ import {Http, RequestOptions, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {globalService} from './globalService';
 import {Component} from '@angular/core';
+import {Observable} from 'rxjs/Rx';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class TipsService {
@@ -69,10 +71,17 @@ export class TipsService {
     return new Promise(resolve => {
       this.http.post('https://right-my-diet.herokuapp.com/category/12345/create', data)
         .map(res => res.json())
+        //.catch(res => this.res.showErrorAlert('can not find'))
+       /* .catch((error: any) => {
+                    if (error.status === 500) {
+                        return Observable.throw(new Error(error.status));
+                        //console.log("hey error");
+                    }
+                    })*/
         .subscribe(data => {
           this.data = data;
           resolve(this.data);
-        });
+        })
     });
   }
 

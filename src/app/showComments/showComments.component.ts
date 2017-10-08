@@ -7,17 +7,25 @@ import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms
 
 
 @Component({
-  templateUrl: 'showComments.component.html'
+  templateUrl: 'showComments.component.html',
+  styles: [`
+    .disableBtn {
+          opacity: 0.5;
+          pointer-events: none;
+    }
+  `]
 })
 export class ShowCommentsComponent {
   public Comments;
   private articleId: any;
   public commentsByArticle;
+  //public isDisable : boolean;
   public tips;
   itemsPPage = 10;
   curPage = '1';
   searchText:any = ' ';
   constructor(public tipsService: TipsService, overlay: Overlay, public router: Router, public modal: Modal, private route: ActivatedRoute) {
+  //this.isDisable = true;
 
     this.curPage = route.params['_value']['page'];
     this.searchText = route.params['_value']['search'];
