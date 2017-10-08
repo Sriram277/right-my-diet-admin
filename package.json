@@ -68,5 +68,9 @@
     "tslint": "latest",
     "typescript": "^2.3.4",
     "webpack": "^3.6.0"
-  }
+  },
+  "engines": {
+  "node": "6.11.3",
+  "npm": "3.10.10"
+}
 }
