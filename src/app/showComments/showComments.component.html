@@ -73,7 +73,10 @@
                         </tr>
                     </tbody>
                 </table>
-                <pagination-controls (pageChange)="changePage($event)" autoHide="true" previousLabel="" nextLabel=""></pagination-controls>
+                <div>
+                <pagination-controls (pageChange)="changePage($event)" autoHide="true" previousLabel="" nextLabel="" style="float:left"></pagination-controls>
+                <button style="float: right;margin-right: 21px;margin-top: 5px;" class="btn btn-success btn-sm" type="button" (click)="backToArticles()">Back</button>
+                </div>
             </div>
         </div>
     </div>

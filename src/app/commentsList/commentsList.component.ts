@@ -10,10 +10,21 @@ import { Modal } from 'ngx-modialog/plugins/bootstrap';
 })
 export class commentsListComponent {
   public Comments;
+  private articleId: any;
+  private searchText:any = ' ';
   public tips;
   itemsPPage = 10;
   curPage = '1';
-  constructor(public tipsService: TipsService, overlay: Overlay, public modal: Modal) {
+  constructor(public tipsService: TipsService, overlay: Overlay, public modal: Modal, public router: Router, private route: ActivatedRoute) {
+
+    this.curPage = route.params['_value']['page'];
+    this.searchText = route.params['_value']['search'];
+
+    if(route.params){
+       this.articleId = route.params['_value']['tipId'];
+       console.log(this.articleId + 'CATEGORY');
+    }
+
     this.loadComments();
   }
 
@@ -114,7 +125,13 @@ export class commentsListComponent {
   }
 
   pagination(i,p){ 
+  alert("fghf");
     return ((Number(this.curPage)- 1)*this.itemsPPage)+i+1;
+  }
+
+  changePage(event){
+    //this.router.navigate(['/comments/'+ event + '/ ']);
+    this.curPage = event;
   }
 
 }
