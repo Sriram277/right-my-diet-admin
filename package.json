@@ -9,40 +9,48 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build",
+     "start": "node Server.js"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "latest",
-    "@angular/common": "4.3.5",
-    "@angular/compiler": "latest",
-    "@angular/core": "latest",
-    "@angular/forms": "latest",
+    "@angular/animations": "^4.4.4",
+    "@angular/cli": "latest",
+    "@angular/common": "^4.4.4",
+    "@angular/compiler": "^4.4.4",
+    "@angular/core": "^4.4.4",
+    "@angular/forms": "^4.4.4",
     "@angular/http": "latest",
     "@angular/platform-browser": "latest",
     "@angular/platform-browser-dynamic": "latest",
     "@angular/router": "latest",
     "@angular/upgrade": "latest",
-    "angular2-froala-wysiwyg": "latest",
+    "@angular/compiler-cli": "latest",
+    "angular-froala-wysiwyg": "latest",
     "chart.js": "latest",
     "core-js": "latest",
+    "express": "^4.16.1",
     "moment": "latest",
     "ng-validators": "latest",
-    "ng2-bootstrap": "latest",
     "ng2-charts": "latest",
     "ng2-ckeditor": "latest",
-    "ng2-datepicker": "latest",
+    "ng2-datepicker": "^2.1.2",
     "ng2-file-upload": "latest",
     "ng2-pagination": "latest",
+    "ngx-bootstrap": "latest",
     "ngx-chips": "^1.5.3",
     "ngx-modialog": "^3.0.4",
     "ngx-pagination": "latest",
     "rxjs": "latest",
     "ts-helpers": "latest",
-    "zone.js": "latest"
+    "typescript": "2.3.4",
+    "zone.js": "latest",
+     "@types/jasmine": "latest",
+     "@types/node": "latest"
+
   },
   "devDependencies": {
     "@angular/cli": "latest",
@@ -59,11 +67,15 @@
     "karma-coverage-istanbul-reporter": "latest",
     "karma-jasmine": "latest",
     "karma-jasmine-html-reporter": "latest",
-    "ng2-tag-input": "^1.4.1",
     "protractor": "latest",
     "ts-node": "latest",
     "tslint": "latest",
-    "typescript": "^2.3.4",
-    "webpack": "^3.6.0"
-  }
+    "typescript": "2.3.4",
+    "webpack": "^3.6.0",
+     "ngx-modialog": "^3.0.4"
+  },
+  "engines": {
+  "node": "6.11.3",
+  "npm": "3.10.10"
+}
 }

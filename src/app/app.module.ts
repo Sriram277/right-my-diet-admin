@@ -9,12 +9,12 @@ import { BootstrapModalModule } from 'ngx-modialog/plugins/bootstrap';
 // import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
 import { CKEditorModule,CKEditorComponent  } from 'ng2-ckeditor';
-import { DatePickerModule } from 'ng2-datepicker';
+import { NgDatepickerModule } from 'ng2-datepicker';
 // import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { BsDropdownModule } from 'ng2-bootstrap/dropdown';
-import { TabsModule } from 'ng2-bootstrap/tabs';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 import { NAV_DROPDOWN_DIRECTIVES } from './shared/nav-dropdown.directive';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
@@ -50,7 +50,7 @@ import { TagInputModule } from 'ngx-chips';
     CKEditorModule,
     // FroalaEditorModule.forRoot(), FroalaViewModule.forRoot(),
     NgxPaginationModule,
-    DatePickerModule,
+    NgDatepickerModule,
     BrowserAnimationsModule,
     TagInputModule
     
