@@ -72,7 +72,7 @@
 
                             </td>
                             <td>
-                                <button class="btn btn-success btn-sm" type="button" [routerLink]="['/showComments',tip.id]">View</button>
+                                <button class="btn btn-success btn-sm" type="button" [routerLink]="['/showComments',tip.id]" style="width:100px;">View<span *ngIf = 'tip.comments.length > 0'> ({{tip.comments.length}})</span></button>
                             </td>
                         </tr>
                     </tbody>
