@@ -1,3 +1,4 @@
+import 'rxjs/add/operator/map';
 import { Component, ViewContainerRef } from '@angular/core';
 import { Overlay } from 'ngx-modialog';
 import { Modal } from 'ngx-modialog/plugins/bootstrap';
@@ -7,7 +8,6 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {Http, RequestOptions, Headers} from '@angular/http';
 import {Observable} from 'rxjs';
 import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/map';
 
 @Component({
   templateUrl: 'tipsAdd.component.html',
@@ -15,6 +15,7 @@ import 'rxjs/add/operator/map';
 })
 export class tipsAddComponent {
   private categories;
+  private requestAutocompleteItems;
   ckeditorContent;
  showLoading = false;
   private tip = {title:'', description:'',images:[],category:'',tagsList:[],tags:[], postType:'',coverBlog: false, gridDescription:''};
@@ -61,6 +62,16 @@ export class tipsAddComponent {
 
   /* Get auto completed strings*/
    getAutocompleteTags() {
+       this.AllTipsService.getsearchItems()
+        .then(
+            data => {
+              //this.searchItems = data
+              this.requestAutocompleteItems = data
+            }, //Bind to view
+            err => {
+              // Log errors if any
+              console.log(err);
+            });
    
    }
 
@@ -145,13 +156,4 @@ export class tipsAddComponent {
     .open();
    }
 
-/*   public requestAutocompleteItems = (text: string): Observable<Response> => {
-    const url = `https://right-my-diet.herokuapp.com/tags/search/{text}`;
-    return this.http
-        .get(url)
-        .map(data => data.json());
-};*/
-
-
- public requestAutocompleteItems = [{value: 0, display: 'Fitness'}, {value: 1, display: 'Beauty'}, {value: 2, display: 'Health'}, {value: 3, display: 'Sample'}];
-}
+ }

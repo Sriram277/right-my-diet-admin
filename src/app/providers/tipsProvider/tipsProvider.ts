@@ -355,5 +355,20 @@ export class TipsService {
         });
     }); 
   }
+
+  /* Auto complete Sarch items */
+
+    public getsearchItems() {
+    return new Promise(resolve => {
+      this.http.get('https://right-my-diet.herokuapp.com/tags/search/all' )
+        .map(res => res.json())
+        .subscribe(data => {
+          this.data = data;
+          resolve(this.data);
+        });
+    }); 
+  }
+
+  /* Auto complete Sarch items */
 }
 
