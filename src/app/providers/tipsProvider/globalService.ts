@@ -8,7 +8,7 @@ export class globalService {
   data;
   options;
   imageData;
-public url: 'https://right-my-diet.herokuapp.com';
+public url: 'https://authentic-genre-184107.appspot.com';
 
 }
 

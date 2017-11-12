@@ -20,11 +20,22 @@ export class ShowCommentsComponent {
   private articleId: any;
   public commentsByArticle;
   //public isDisable : boolean;
+  public userStat;
+  public userRole;
   public tips;
   itemsPPage = 10;
   curPage = '1';
   searchText:any = ' ';
   constructor(public tipsService: TipsService, overlay: Overlay, public router: Router, public modal: Modal, private route: ActivatedRoute) {
+
+  //get userStat(): any {
+    this.userStat = localStorage.getItem('userData');
+    console.log(this.userStat);
+    console.log(this.userStat.role);
+    this.userRole = JSON.parse(this.userStat).role[0];
+
+  //}
+
   //this.isDisable = true;
 
     this.curPage = route.params['_value']['page'];

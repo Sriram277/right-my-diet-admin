@@ -22,7 +22,7 @@ export class TipsService {
 
   load(userId) {
     return new Promise(resolve => {
-      this.http.get('https://right-my-diet.herokuapp.com/articles/'+ userId +'/list/all')
+      this.http.get('https://authentic-genre-184107.appspot.com/articles/'+ userId +'/list/all')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -34,7 +34,7 @@ export class TipsService {
 
   public getCategories() {
     return new Promise(resolve => {
-      this.http.get('https://right-my-diet.herokuapp.com/category/list/all')
+      this.http.get('https://authentic-genre-184107.appspot.com/category/list/all')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -46,7 +46,7 @@ export class TipsService {
 
   public getOneTip(tipId) {
     return new Promise(resolve => {
-      this.http.get('https://right-my-diet.herokuapp.com/articles/get/' + tipId + '/one')
+      this.http.get('https://authentic-genre-184107.appspot.com/articles/get/' + tipId + '/one')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -58,7 +58,7 @@ export class TipsService {
 
   public addTip(data,idVal) {
     return new Promise(resolve => {
-      this.http.post('https://right-my-diet.herokuapp.com/articles/'+idVal+'/create', data)
+      this.http.post('https://authentic-genre-184107.appspot.com/articles/'+idVal+'/create', data)
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -69,7 +69,7 @@ export class TipsService {
 
     public AddCategory(data) {
     return new Promise(resolve => {
-      this.http.post('https://right-my-diet.herokuapp.com/category/12345/create', data)
+      this.http.post('https://authentic-genre-184107.appspot.com/category/12345/create', data)
         .map(res => res.json())
         //.catch(res => this.res.showErrorAlert('can not find'))
        /* .catch((error: any) => {
@@ -87,7 +87,7 @@ export class TipsService {
 
   public updateTip(tipId, data) {
     return new Promise(resolve => {
-      this.http.put('https://right-my-diet.herokuapp.com/articles/' + tipId + '/update', data)
+      this.http.put('https://authentic-genre-184107.appspot.com/articles/' + tipId + '/update', data)
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -98,7 +98,7 @@ export class TipsService {
 
   deleteTip(tipId) {
     return new Promise(resolve => {
-      this.http.delete('https://right-my-diet.herokuapp.com/articles/' + tipId + '/delete')
+      this.http.delete('https://authentic-genre-184107.appspot.com/articles/' + tipId + '/delete')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -108,7 +108,7 @@ export class TipsService {
   }
   makePublish(tipId){
     return new Promise(resolve => {
-      this.http.get('https://right-my-diet.herokuapp.com/articles/' + tipId + '/make/publish')
+      this.http.get('https://authentic-genre-184107.appspot.com/articles/' + tipId + '/make/publish')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -136,7 +136,7 @@ export class TipsService {
 
  public getdeletedTip(userId) { 
     return new Promise(resolve => {
-      this.http.get('https://right-my-diet.herokuapp.com/articles/'+ userId +'/deletedUserTips')
+      this.http.get('https://authentic-genre-184107.appspot.com/articles/'+ userId +'/deletedUserTips')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -147,7 +147,7 @@ export class TipsService {
 
    public perdeleteTip(tipId) {   
     return new Promise(resolve => {
-      this.http.delete('https://right-my-diet.herokuapp.com/articles/' + tipId + '/trash')
+      this.http.delete('https://authentic-genre-184107.appspot.com/articles/' + tipId + '/trash')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -158,7 +158,7 @@ export class TipsService {
 
      public deleteCategory(categoryId) {
     return new Promise(resolve => {
-      this.http.delete('https://right-my-diet.herokuapp.com/category/' + categoryId + '/deleteCategory')
+      this.http.delete('https://authentic-genre-184107.appspot.com/category/' + categoryId + '/deleteCategory')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -169,7 +169,7 @@ export class TipsService {
 
     public getOneCategory(categoryId) {  
     return new Promise(resolve => {
-      this.http.get('https://right-my-diet.herokuapp.com/category/' + categoryId + '/findCategory')
+      this.http.get('https://authentic-genre-184107.appspot.com/category/' + categoryId + '/findCategory')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -180,7 +180,7 @@ export class TipsService {
   }
     public updateCategory(categoryId, data) {
     return new Promise(resolve => {
-      this.http.put('https://right-my-diet.herokuapp.com/category/' + categoryId + '/update', data)
+      this.http.put('https://authentic-genre-184107.appspot.com/category/' + categoryId + '/update', data)
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -191,7 +191,7 @@ export class TipsService {
 
     allTips(userId) {
     return new Promise(resolve => { 
-      this.http.get('https://right-my-diet.herokuapp.com/articles/'+ userId +'/list/all')
+      this.http.get('https://authentic-genre-184107.appspot.com/articles/'+ userId +'/list/all')
         .map(res => res.json())
         .subscribe(data => {
           let b =[];
@@ -210,7 +210,7 @@ export class TipsService {
  searchTips(searchVal, categoryIdVal, userId){
     if(categoryIdVal == 'all'){
       return new Promise(resolve => {
-        this.http.get('https://right-my-diet.herokuapp.com/articles/'+ userId +'/'+ searchVal +'/userWiseTipsSearch')
+        this.http.get('https://authentic-genre-184107.appspot.com/articles/'+ userId +'/'+ searchVal +'/userWiseTipsSearch')
           .map(res => res.json())
           .subscribe(data => {
             this.data = data;
@@ -219,7 +219,7 @@ export class TipsService {
       });
     } else if(categoryIdVal != 'all'){
        return new Promise(resolve => {
-        this.http.get('https://right-my-diet.herokuapp.com/articles/'+categoryIdVal+'/'+searchVal+'/categoryTipsSearch')
+        this.http.get('https://authentic-genre-184107.appspot.com/articles/'+categoryIdVal+'/'+searchVal+'/categoryTipsSearch')
           .map(res => res.json())
           .subscribe(data => {
             this.data = data;
@@ -232,7 +232,7 @@ export class TipsService {
  searchUserDelTips(searchVal, categoryIdVal, userId){
   if(categoryIdVal == 'all'){
     return new Promise(resolve => {
-      this.http.get('https://right-my-diet.herokuapp.com/articles/'+ userId +'/deletedUserTips?str='+ searchVal )
+      this.http.get('https://authentic-genre-184107.appspot.com/articles/'+ userId +'/deletedUserTips?str='+ searchVal )
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -243,7 +243,7 @@ export class TipsService {
     });
   // } else if(categoryIdVal != 'all'){
   //    return new Promise(resolve => {
-  //     this.http.get('https://right-my-diet.herokuapp.com/articles/'+categoryIdVal+'/'+searchVal+'/categoryTipsSearch')
+  //     this.http.get('https://authentic-genre-184107.appspot.com/articles/'+categoryIdVal+'/'+searchVal+'/categoryTipsSearch')
   //       .map(res => res.json())
   //       .subscribe(data => {
   //         this.data = data;
@@ -256,7 +256,7 @@ export class TipsService {
   searchTipsAll(searchVal, categoryIdVal){      
     if(categoryIdVal == 'all'){
       return new Promise(resolve => {
-        this.http.get('https://right-my-diet.herokuapp.com/articles/'+ searchVal +'/searchTips')
+        this.http.get('https://authentic-genre-184107.appspot.com/articles/'+ searchVal +'/searchTips')
           .map(res => res.json())
           .subscribe(data => {
             this.data = data;
@@ -265,7 +265,7 @@ export class TipsService {
       });
     } else if(categoryIdVal != 'all'){
        return new Promise(resolve => {
-        this.http.get('https://right-my-diet.herokuapp.com/articles/'+categoryIdVal+'/'+searchVal+'/categoryTipsSearch')
+        this.http.get('https://authentic-genre-184107.appspot.com/articles/'+categoryIdVal+'/'+searchVal+'/categoryTipsSearch')
           .map(res => res.json())
           .subscribe(data => {
             this.data = data;
@@ -278,7 +278,7 @@ export class TipsService {
 
   public getVendorList() {  
     return new Promise(resolve => {
-      this.http.get('https://right-my-diet.herokuapp.com/user/userVendorDetails')
+      this.http.get('https://authentic-genre-184107.appspot.com/user/userVendorDetails')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -290,7 +290,7 @@ export class TipsService {
 
   public vendorBlock(userId){  
     return new Promise(resolve => {
-      this.http.get('https://right-my-diet.herokuapp.com/user/'+userId+'/userBlockActive')
+      this.http.get('https://authentic-genre-184107.appspot.com/user/'+userId+'/userBlockActive')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -302,7 +302,7 @@ export class TipsService {
 
   public getComments() {
     return new Promise(resolve => {
-      this.http.get('https://right-my-diet.herokuapp.com/comments/display/all')
+      this.http.get('https://authentic-genre-184107.appspot.com/comments/display/all')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -314,7 +314,7 @@ export class TipsService {
 
   public publishComment(commentId) {
     return new Promise(resolve => {
-      this.http.get('https://right-my-diet.herokuapp.com/articles/'+commentId+'/publish')
+      this.http.get('https://authentic-genre-184107.appspot.com/articles/'+commentId+'/publish')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -325,7 +325,7 @@ export class TipsService {
 
   public deleteComment(commentId) {
     return new Promise(resolve => {
-      this.http.delete('https://right-my-diet.herokuapp.com/articles/' + commentId + '/deleteComment')
+      this.http.delete('https://authentic-genre-184107.appspot.com/articles/' + commentId + '/deleteComment')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -336,7 +336,7 @@ export class TipsService {
 
     public searchElements(str) {
     return new Promise(resolve => {
-      this.http.get('https://right-my-diet.herokuapp.com/tags/search/' + str)
+      this.http.get('https://authentic-genre-184107.appspot.com/tags/search/' + str)
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -347,7 +347,7 @@ export class TipsService {
   
     public getCommentsbyArticle(articleId) {
     return new Promise(resolve => {
-      this.http.get('https://right-my-diet.herokuapp.com/article/' + articleId + '/list/comments')
+      this.http.get('https://authentic-genre-184107.appspot.com/article/' + articleId + '/list/comments')
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;
@@ -360,7 +360,7 @@ export class TipsService {
 
     public getsearchItems() {
     return new Promise(resolve => {
-      this.http.get('https://right-my-diet.herokuapp.com/tags/search/all' )
+      this.http.get('https://authentic-genre-184107.appspot.com/tags/search/all' )
         .map(res => res.json())
         .subscribe(data => {
           this.data = data;

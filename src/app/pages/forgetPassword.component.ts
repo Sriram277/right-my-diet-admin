@@ -32,7 +32,7 @@ export class forgetPasswordComponent {
   //      this.router.navigate(['/pages/resetpassword']);
   // }
      resetPassword(validVal: NgForm) {
-    let role ='VENDOR';
+    let role ='ADMIN';
     if(validVal.valid){
     this.Auth.forgetPassword(role,this.userData)
          .then(

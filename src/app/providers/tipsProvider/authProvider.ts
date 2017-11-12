@@ -10,7 +10,7 @@ export class AuthService {
   options;
   imageData;
 
-  baseURL:String = "https://right-my-diet.herokuapp.com/";
+  baseURL:String = "https://authentic-genre-184107.appspot.com/";
 
   constructor(public http: Http, public globalservices:globalService) {
     console.log(this.baseURL);

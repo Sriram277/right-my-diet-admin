@@ -75,7 +75,7 @@
                             <a class="nav-link " routerLinkActive="active " [routerLink]="[ '/Tips/1/ '] "><i class="icon-list "></i> My Articles</a>
                         </li>
 
-                        <li *ngIf="hideRole( 'VENDOR') " class="nav-item " style="display:none;">
+                        <li *ngIf="hideRole( 'ADMIN') " class="nav-item " style="display:none;">
                             <a class="nav-link " routerLinkActive="active " [routerLink]="[ '/AllTips/1/ '] "><i class="icon-list "></i>Vendors Articles List</a>
 
                         </li>
@@ -90,7 +90,7 @@
                     </ul>
                 </li>
 
-                <li *ngIf="hideRole( 'VENDOR') " class="nav-item nav-dropdown " routerLinkActive="open ">
+                <li *ngIf="hideRole( 'ADMIN') " class="nav-item nav-dropdown " routerLinkActive="open ">
                     <a class="nav-link nav-dropdown-toggle " href="javascript:void() "><i class="icon-layers "></i> Categories</a>
                     <ul class="nav-dropdown-items ">
 
@@ -105,7 +105,7 @@
                     </ul>
                 </li>
                 <!--Comments section started -->
-                <li *ngIf="hideRole( 'VENDOR') " class="nav-item nav-dropdown " routerLinkActive="open ">
+                <li *ngIf="hideRole( 'ADMIN') " class="nav-item nav-dropdown " routerLinkActive="open " style="display:none;">
                     <a class="nav-link nav-dropdown-toggle " href="javascript:void() "><i class="icon-layers "></i> Comments</a>
                     <ul class="nav-dropdown-items ">
 
@@ -120,7 +120,7 @@
                     </ul>
                 </li>
                 <!--Comments section ended -->
-                <li *ngIf="hideRole( 'VENDOR') " class="nav-item nav-dropdown " routerLinkActive="open " style="display:none;">
+                <li *ngIf="hideRole( 'ADMIN') " class="nav-item nav-dropdown " routerLinkActive="open " style="display:none;">
                     <a class="nav-link nav-dropdown-toggle " href="javascript:void() "><i class="icon-layers "></i>Vendor Manage</a>
                     <ul class="nav-dropdown-items ">
                         <li class="nav-item ">

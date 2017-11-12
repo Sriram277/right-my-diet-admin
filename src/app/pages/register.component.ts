@@ -46,7 +46,7 @@ this.userData = {
     // });
   }
    register(validVal: NgForm) {
-     this.userData.role ='VENDOR';
+     this.userData.role ='ADMIN';
      let TempData = this.userData;
     //  delete TempData.confirmPassword;
     this.Auth.register(TempData).then( data => {
