@@ -56,11 +56,11 @@
                             <td>
                                 <!-- <button class="btn btn-success btn-sm" type="button" [routerLink]="['/TipsEdit',tip.id]">Edit</button> -->
                                 <!-- <button class="btn btn-danger btn-sm" type="button" (click)="removeTip(tip)">Delete</button> -->
-                                <span class="fa fa-pencil-square" style="font-size: 20px;margin-right: 3px;" [routerLink]="['/TipsEdit',tip.id]"></span>
-                                <span class="fa fa-trash-o" style="font-size: 20px;margin-right: 3px;" (click)="removeTip(tip)"></span>
-                                <span class="fa fa-eye" style="font-size: 20px;margin-right: 3px;" (click)="showPreview(tip)" ></span>
+                                <span class="fa fa-pencil-square" style="font-size: 20px;margin-right: 3px;" [routerLink]="['/TipsEdit',tip.id]" title="Edit"></span>
+                                <span class="fa fa-trash-o" style="font-size: 20px;margin-right: 3px;" (click)="removeTip(tip)" title="Delete"></span>
+                                <span class="fa fa-eye" style="font-size: 20px;margin-right: 3px;" (click)="showPreview(tip)" title="Preview"></span>
                                 
-                                <span *ngIf="tip.status === 'UNPUBLISH'" class="fa fa-newspaper-o" style="font-size: 20px;margin-right: 3px;" (click)="makePublish(tip)" ></span>
+                                <span *ngIf="tip.status === 'UNPUBLISH'" class="fa fa-newspaper-o" style="font-size: 20px;margin-right: 3px;" (click)="makePublish(tip)" title="Publish"></span>
 
                                 <!-- <button *ngIf="tip.status === 'UNPUBLISH'" class="btn btn-primary btn-sm" type="button" (click)="makePublish(tip)">Publish</button> -->
                                 
