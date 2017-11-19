@@ -122,7 +122,7 @@ export class TipsService {
     let formData: FormData = new FormData();
     formData.append('content', file);
     return new Promise(resolve => {
-      this.http.post('http://right-my-diet.herokuapp.com/file/uploads3', formData, {
+      this.http.post('https://authentic-genre-184107.appspot.com/file/uploads3', formData, {
         headers: headers
       })
         .map(res => res.json())

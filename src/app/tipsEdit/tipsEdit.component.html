@@ -23,8 +23,8 @@
                             <!--<textarea id="textarea-input" [(ngModel)]="tip.description"  name="textarea-input" rows="9" class="form-control" placeholder="Content.."></textarea>-->
                             <!--<div [froalaEditor] [(froalaModel)]="tip.description">Hello, Froala!</div>-->
 
-                            <ckeditor [(ngModel)]="tip.description" [ngModelOptions]="{standalone: true}" [config]="config" debounce="2500"></ckeditor>
-                            <div [innerHTML]="content"></div>
+                            <ckeditor [(ngModel)]="tip.description" [ngModelOptions]="{standalone: true}" [config]="config" name="description" debounce="2500"></ckeditor>
+                            <!-- <div [innerHTML]="content"></div> -->
 
                         </div>
 

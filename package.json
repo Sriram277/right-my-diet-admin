@@ -13,7 +13,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build",
-     "start": "node Server.js"
+    "start": "node Server.js"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +21,7 @@
     "@angular/cli": "latest",
     "@angular/common": "^4.4.4",
     "@angular/compiler": "^4.4.4",
+    "@angular/compiler-cli": "latest",
     "@angular/core": "^4.4.4",
     "@angular/forms": "^4.4.4",
     "@angular/http": "latest",
@@ -28,7 +29,8 @@
     "@angular/platform-browser-dynamic": "latest",
     "@angular/router": "latest",
     "@angular/upgrade": "latest",
-    "@angular/compiler-cli": "latest",
+    "@types/jasmine": "latest",
+    "@types/node": "latest",
     "angular-froala-wysiwyg": "latest",
     "chart.js": "latest",
     "core-js": "latest",
@@ -36,7 +38,7 @@
     "moment": "latest",
     "ng-validators": "latest",
     "ng2-charts": "latest",
-    "ng2-ckeditor": "latest",
+    "ng2-ckeditor": "^1.1.9",
     "ng2-datepicker": "^2.1.2",
     "ng2-file-upload": "latest",
     "ng2-pagination": "latest",
@@ -47,10 +49,7 @@
     "rxjs": "latest",
     "ts-helpers": "latest",
     "typescript": "2.3.4",
-    "zone.js": "latest",
-     "@types/jasmine": "latest",
-     "@types/node": "latest"
-
+    "zone.js": "latest"
   },
   "devDependencies": {
     "@angular/cli": "latest",
@@ -72,10 +71,10 @@
     "tslint": "latest",
     "typescript": "2.3.4",
     "webpack": "^3.6.0",
-     "ngx-modialog": "^3.0.4"
+    "ngx-modialog": "^3.0.4"
   },
   "engines": {
-  "node": "6.11.3",
-  "npm": "3.10.10"
-}
+    "node": "6.11.3",
+    "npm": "3.10.10"
+  }
 }

@@ -16,8 +16,9 @@ import 'rxjs/add/operator/debounceTime';
 export class tipsAddComponent {
   private categories;
   private requestAutocompleteItems;
+  public imgURL;
   ckeditorContent;
- showLoading = false;
+  showLoading = false;
   private tip = {title:'', description:'',images:[],category:'',tagsList:[],tags:[], postType:'',coverBlog: false, gridDescription:''};
   private hello;
   public showMe = false;
@@ -131,14 +132,15 @@ export class tipsAddComponent {
       this.AllTipsService.fileUpload(this.myfile)
       .then(data => {
         this.tip.images = [];
-        this.tip.images.push(data['files'][0].url);
+        //this.tip.images.push(data['files'][0].url);
+        this.tip.images.push(data['fileUrl']);
         this.showLoading = false;
       }, //Bind to view
       err => {
         // Log errors if any
         console.log(err);
       });
-  }
+  } 
 
   tipPublished(){
    this.modal.alert()

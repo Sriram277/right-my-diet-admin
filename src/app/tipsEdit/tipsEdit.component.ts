@@ -17,6 +17,7 @@ declare const CKEDITOR: any;
 })
 export class tipsEditComponent {
   
+  private requestAutocompleteItems;
   showLoading = false;
   femaleCheck = false;
   maleCheck = false;
@@ -47,9 +48,11 @@ export class tipsEditComponent {
        this.tipId = route.params['_value']['tipId'];
     }
     this.loadTipDetails();
+    this.getAutocompleteTags();
     this.loadCategories();
     for (let name in CKEDITOR.instances) {
         CKEDITOR.instances[name].destroy(true);
+        //CKEDITOR.remove(CKEDITOR.instances[name]);
     }
   }
   // Local properties
@@ -141,7 +144,8 @@ export class tipsEditComponent {
       .then(data => {
         //console.log(data);
         this.tip.images = [];
-        this.tip.images.push(data['files'][0].url);
+        //this.tip.images.push(data['files'][0].url);
+        this.tip.images.push(data['fileUrl']);
         this.showLoading = false;
       }, //Bind to view
       err => {
@@ -158,4 +162,19 @@ export class tipsEditComponent {
         .body(`<p>Your Tip is updated successfully</p>`)
         .open();
   }
+
+    /* Get auto completed strings*/
+   getAutocompleteTags() {
+       this.AllTipsService.getsearchItems()
+        .then(
+            data => {
+              //this.searchItems = data
+              this.requestAutocompleteItems = data
+            }, //Bind to view
+            err => {
+              // Log errors if any
+              console.log(err);
+            });
+   
+   }
 }
